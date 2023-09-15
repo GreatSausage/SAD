@@ -1,0 +1,15 @@
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.vbproj.AssemblyReference.cache
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmLogin.resources
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.Resources.resources
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.vbproj.GenerateResource.cache
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.vbproj.CoreCompileInputs.cache
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\bin\Debug\System Analysis and Design.exe.config
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\bin\Debug\System Analysis and Design.exe
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\bin\Debug\System Analysis and Design.pdb
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\bin\Debug\System Analysis and Design.xml
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\bin\Debug\Guna.UI2.dll
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.vbproj.CopyComplete
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.exe
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.xml
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.pdb
