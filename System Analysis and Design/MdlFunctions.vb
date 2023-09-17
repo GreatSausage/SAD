@@ -22,7 +22,9 @@
         DGP.CloseFigure()
 
         obj.Region = New Region(DGP)
+    End Sub
 
-
+    Public Sub EmptyTextbox()
+        MessageBox.Show("Please fill up the necessary fields to proceed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
     End Sub
 End Module
