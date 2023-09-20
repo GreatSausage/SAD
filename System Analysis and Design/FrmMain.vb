@@ -1,6 +1,7 @@
 ﻿Public Class FrmMain
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BilognaPictureBox(PictureBox1)
+        DisplayFormPanel(FrmDashboard, PanelDisplay)
     End Sub
 
     Private Sub FrmMain_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -10,5 +11,9 @@
         Me.Height = y - (y - Screen.PrimaryScreen.WorkingArea.Height)
         Me.Left = 0
         Me.Top = 0
+    End Sub
+
+    Private Sub BtnDashboard_Click(sender As Object, e As EventArgs) Handles BtnDashboard.Click
+        DisplayFormPanel(FrmDashboard, PanelDisplay)
     End Sub
 End Class
