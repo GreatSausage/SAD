@@ -1,6 +1,4 @@
-﻿Imports System.Web
-
-Public Class FrmLogin
+﻿Public Class FrmLogin
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles Me.Load
         RoundCorners(Me)
         TxtEmail.ContextMenuStrip = New ContextMenuStrip()
@@ -14,14 +12,14 @@ Public Class FrmLogin
     End Sub
 
     Private Sub TxtEmail_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtEmail.KeyDown
-        If e.Control AndAlso (e.KeyCode = Keys.V OrElse e.KeyCode = Keys.C) Then
-            e.SuppressKeyPress = True
-        End If
+        AntiCopyPasteInput(sender, e)
     End Sub
 
     Private Sub TxtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtPassword.KeyDown
-        If e.Control AndAlso (e.KeyCode = Keys.V OrElse e.KeyCode = Keys.C) Then
-            e.SuppressKeyPress = True
-        End If
+        AntiCopyPasteInput(sender, e)
+    End Sub
+
+    Private Sub TxtEmail_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtEmail.KeyPress
+        AntiSymbolsInput(sender, e)
     End Sub
 End Class

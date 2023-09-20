@@ -27,4 +27,17 @@
     Public Sub EmptyTextbox()
         MessageBox.Show("Please fill up the necessary fields to proceed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
     End Sub
+
+    Public Sub AntiSymbolsInput(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsLetter(e.KeyChar) AndAlso e.KeyChar <> "-"c AndAlso e.KeyChar <> ChrW(Keys.Back) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Public Sub AntiCopyPasteInput(sender As Object, e As KeyEventArgs)
+        If e.Control AndAlso (e.KeyCode = Keys.V OrElse e.KeyCode = Keys.C) Then
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
 End Module
