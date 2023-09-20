@@ -40,4 +40,11 @@
         End If
     End Sub
 
+    Public Sub BilognaPictureBox(pbox As PictureBox)
+        Dim path As New Drawing2D.GraphicsPath()
+        path.AddEllipse(0, 0, pbox.Width, pbox.Height)
+        Dim region As New Region(path)
+        pbox.Region = region
+    End Sub
+
 End Module

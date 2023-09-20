@@ -13,3 +13,4 @@ C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and De
 C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.exe
 C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.xml
 C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System Analysis and Design.pdb
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmMain.resources
