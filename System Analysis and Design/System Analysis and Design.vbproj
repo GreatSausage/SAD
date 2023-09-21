@@ -79,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBorrowers.Designer.vb">
+      <DependentUpon>FrmBorrowers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBorrowers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmDashboard.Designer.vb">
       <DependentUpon>FrmDashboard.vb</DependentUpon>
     </Compile>
@@ -116,6 +122,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmBorrowers.resx">
+      <DependentUpon>FrmBorrowers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.vb</DependentUpon>
     </EmbeddedResource>

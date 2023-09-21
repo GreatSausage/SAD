@@ -16,4 +16,8 @@
     Private Sub BtnDashboard_Click(sender As Object, e As EventArgs) Handles BtnDashboard.Click
         DisplayFormPanel(FrmDashboard, PanelDisplay)
     End Sub
+
+    Private Sub BtnBorrowers_Click(sender As Object, e As EventArgs) Handles BtnBorrowers.Click
+        DisplayFormPanel(FrmBorrowers, PanelDisplay)
+    End Sub
 End Class
