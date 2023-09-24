@@ -103,6 +103,12 @@
     <Compile Include="FrmMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmNewBorrower.Designer.vb">
+      <DependentUpon>FrmNewBorrower.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNewBorrower.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MdlFunctions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewBorrower.resx">
+      <DependentUpon>FrmNewBorrower.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

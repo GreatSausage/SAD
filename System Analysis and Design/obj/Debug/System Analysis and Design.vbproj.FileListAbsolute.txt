@@ -16,3 +16,4 @@ C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and De
 C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmMain.resources
 C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmDashboard.resources
 C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmBorrowers.resources
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmNewBorrower.resources
