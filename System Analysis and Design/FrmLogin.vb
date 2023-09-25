@@ -8,7 +8,11 @@
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
         If String.IsNullOrEmpty(TxtEmail.Text) Or String.IsNullOrEmpty(TxtPassword.Text) Then
             EmptyTextbox()
+            Exit Sub
         End If
+
+        SignInScreen()
+
     End Sub
 
     Private Sub TxtEmail_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtEmail.KeyDown
