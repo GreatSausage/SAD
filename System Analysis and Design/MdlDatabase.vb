@@ -25,9 +25,8 @@ Module MdlDatabase
 
             If (librarianPassword.ExecuteScalar() > 0) Then
                 MessageBox.Show("tada")
-                Dim login As New Form
-                login.Dispose()
                 FrmMain.Show()
+                FrmLogin.Close()
 
             Else
                 MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -40,10 +39,8 @@ Module MdlDatabase
 
             If (asstLibrarianPassword.ExecuteScalar() > 0) Then
                 MessageBox.Show("tada")
-                Dim login As New Form
                 FrmMain.Show()
-                login.Dispose()
-
+                FrmLogin.Close()
             Else
                 MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
