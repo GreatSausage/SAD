@@ -1,7 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Module MdlDatabase
     Public connection As SqlConnection = OpenSesame("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\dbUsers.mdf;Integrated Security=True")
-
+    Dim adapter As SqlDataAdapter
+    Dim dataset As DataSet
     Public Function OpenSesame(connString As String) As SqlConnection
         Dim connection As SqlConnection = Nothing
         Try
@@ -63,6 +64,14 @@ Module MdlDatabase
         End With
         insertCommand.ExecuteNonQuery()
         MessageBox.Show("Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Public Sub IdisplayMoTo(datagrid As DataGridView, tblName As String)
+        Dim selectCommand As New SqlCommand("SELECT * FROM " + tblName, connection)
+        adapter = New SqlDataAdapter(selectCommand)
+        dataset = New DataSet
+        adapter.Fill(dataset)
+        datagrid.DataSource = dataset.Tables(0)
     End Sub
 
 
