@@ -4,6 +4,7 @@
     End Sub
 
     Private Sub FrmBorrowers_Load(sender As Object, e As EventArgs) Handles Me.Load
-        IdisplayMoTo(Datagridview, "tblBorrowers")
+        Dim table As DataTable = DisplayData("tblBorrowers")
+        Datagridview.DataSource = table
     End Sub
 End Class

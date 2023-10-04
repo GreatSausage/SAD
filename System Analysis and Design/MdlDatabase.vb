@@ -1,80 +1,85 @@
 ﻿Imports System.Data.SqlClient
+
 Module MdlDatabase
-    Public connection As SqlConnection = OpenSesame("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\dbUsers.mdf;Integrated Security=True")
-    Dim adapter As SqlDataAdapter
-    Dim dataset As DataSet
-    Public Function OpenSesame(connString As String) As SqlConnection
-        Dim connection As SqlConnection = Nothing
-        Try
-            connection = New SqlConnection(connString)
-            connection.Open()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        Return connection
+
+    Private Const ConnString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\dbUsers.mdf;Integrated Security=True"
+
+    Private Function CreateConnection() As SqlConnection
+        Return New SqlConnection(ConnString)
+    End Function
+
+    Public Function DisplayData(tblName As String) As DataTable
+        Using conn As SqlConnection = CreateConnection()
+            Dim selectCommand As New SqlCommand($"SELECT * FROM {tblName}", conn)
+            Dim adapter As New SqlDataAdapter(selectCommand)
+            Dim dataset As New DataSet()
+            conn.Open()
+            adapter.Fill(dataset)
+            Return dataset.Tables(0)
+        End Using
     End Function
 
 #Region "Sign in screen functions"
-    Public Sub SignInScreen()
+    Public Function SignInScreen() As Boolean
+        Dim email = FrmLogin.TxtEmail.Text
+        Dim password = FrmLogin.TxtPassword.Text
+        Dim tableName As String = If(CheckExists("tblLibrarians", email), "tblLibrarians", If(CheckExists("tblAsstLibrarian", email), "tblAsstLibrarian", String.Empty))
 
-        Dim librarianCommand As New SqlCommand("SELECT * FROM tblLibrarians WHERE email = @email", connection)
-        librarianCommand.Parameters.AddWithValue("@email", FrmLogin.TxtEmail.Text)
-        Dim asstLibrarianCommand As New SqlCommand("SELECT * FROM tblAsstLibrarian WHERE email = @email", connection)
-        asstLibrarianCommand.Parameters.AddWithValue("@email", FrmLogin.TxtEmail.Text)
-        If (librarianCommand.ExecuteScalar() > 0) Then
-            Dim librarianPassword As New SqlCommand("SELECT * FROM tblLibrarians WHERE password = @password", connection)
-            librarianPassword.Parameters.AddWithValue("@password", FrmLogin.TxtPassword.Text)
-            If (librarianPassword.ExecuteScalar() > 0) Then
-                MessageBox.Show("tada")
-                FrmMain.Show()
-                FrmLogin.Close()
-            Else
-                MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-
-        ElseIf (asstLibrarianCommand.ExecuteScalar() > 0) Then
-        Dim asstLibrarianPassword As New SqlCommand("SELECT * FROM tblAsstLibrarian WHERE password = @password", connection)
-            asstLibrarianPassword.Parameters.AddWithValue("@password", FrmLogin.TxtPassword.Text)
-
-            If (asstLibrarianPassword.ExecuteScalar() > 0) Then
-                MessageBox.Show("tada")
-                FrmMain.Show()
-                FrmLogin.Close()
-            Else
-                MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        Else
+        If String.IsNullOrEmpty(tableName) Then
             MessageBox.Show("Email not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
         End If
 
-    End Sub
+        Dim query As String = $"SELECT COUNT(*) FROM {tableName} WHERE email = @email AND password = @password"
+        Using conn As SqlConnection = CreateConnection()
+            Dim command As New SqlCommand(query, conn)
+            command.Parameters.AddWithValue("@email", email)
+            command.Parameters.AddWithValue("@password", password)
+            conn.Open()
+            If command.ExecuteScalar() > 0 Then
+                FrmLogin.Hide()
+                FrmMain.Show()
+                Return True
+            Else
+                MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return False
+            End If
+        End Using
+    End Function
+
+    Private Function CheckExists(tableName As String, email As String) As Boolean
+        Dim query As String = $"SELECT COUNT(*) FROM {tableName} WHERE email = @email"
+        Using conn As SqlConnection = CreateConnection()
+            Dim command As New SqlCommand(query, conn)
+            command.Parameters.AddWithValue("@email", email)
+            conn.Open()
+            Return command.ExecuteScalar() > 0
+        End Using
+    End Function
+
 #End Region
 
 #Region "manage borrower functions"
-    Public Sub IinsertMoTo()
-        Dim insertCommand As New SqlCommand("INSERT INTO tblBorrowers (lrn, firstName, lastName, grade, section, guardianContact) 
-        VALUES (@lrn, @firstName, @lastName, @grade, @section, @guardianContact)", connection)
-        With insertCommand.Parameters
-            .AddWithValue("@lrn", FrmNewBorrower.TxtLRN.Text)
-            .AddWithValue("@firstName", FrmNewBorrower.TxtFirstName.Text)
-            .AddWithValue("@lastName", FrmNewBorrower.TxtLastName.Text)
-            .AddWithValue("@grade", FrmNewBorrower.TxtGrade.Text)
-            .AddWithValue("@section", FrmNewBorrower.TxtSection.Text)
-            .AddWithValue("@guardianContact", FrmNewBorrower.TxtContact.Text)
-        End With
-        insertCommand.ExecuteNonQuery()
-        MessageBox.Show("Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    Public Sub InsertBorrowers()
+        Using conn As SqlConnection = CreateConnection()
+            Dim insertCommand As New SqlCommand("INSERT INTO tblBorrowers (lrn, firstName, lastName, grade, section, guardianContact) VALUES (@lrn, @firstName, @lastName, @grade, @section, @guardianContact)", conn)
+            With insertCommand.Parameters
+                .AddWithValue("@lrn", FrmNewBorrower.TxtLRN.Text)
+                .AddWithValue("@firstName", FrmNewBorrower.TxtFirstName.Text)
+                .AddWithValue("@lastName", FrmNewBorrower.TxtLastName.Text)
+                .AddWithValue("@grade", FrmNewBorrower.TxtGrade.Text)
+                .AddWithValue("@section", FrmNewBorrower.TxtSection.Text)
+                .AddWithValue("@guardianContact", FrmNewBorrower.TxtContact.Text)
+            End With
+            conn.Open()
+            insertCommand.ExecuteNonQuery()
+            MessageBox.Show("Added Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            FrmNewBorrower.Close()
+            Dim table As DataTable = DisplayData("tblBorrowers")
+            FrmBorrowers.Datagridview.DataSource = table
+        End Using
     End Sub
-
-    Public Sub IdisplayMoTo(datagrid As DataGridView, tblName As String)
-        Dim selectCommand As New SqlCommand("SELECT * FROM " + tblName, connection)
-        adapter = New SqlDataAdapter(selectCommand)
-        dataset = New DataSet
-        adapter.Fill(dataset)
-        datagrid.DataSource = dataset.Tables(0)
-    End Sub
-
 
 #End Region
-End Module
 
+End Module

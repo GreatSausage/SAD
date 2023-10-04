@@ -65,7 +65,7 @@ Partial Class FrmBorrowers
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(449, 136)
         Me.Label17.TabIndex = 4
-        Me.Label17.Text = "    MANAGE BORROWERS"
+        Me.Label17.Text = "MANAGE BORROWERS"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel4
@@ -202,7 +202,7 @@ Partial Class FrmBorrowers
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Datagridview.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.Datagridview.ColumnHeadersHeight = 4
+        Me.Datagridview.ColumnHeadersHeight = 20
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -243,7 +243,7 @@ Partial Class FrmBorrowers
         Me.Datagridview.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Datagridview.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.Datagridview.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.Datagridview.ThemeStyle.HeaderStyle.Height = 4
+        Me.Datagridview.ThemeStyle.HeaderStyle.Height = 20
         Me.Datagridview.ThemeStyle.ReadOnly = True
         Me.Datagridview.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.Datagridview.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal

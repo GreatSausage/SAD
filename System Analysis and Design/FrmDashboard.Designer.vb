@@ -113,7 +113,7 @@ Partial Class FrmDashboard
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(449, 136)
         Me.Label17.TabIndex = 4
-        Me.Label17.Text = "    DASHBOARD"
+        Me.Label17.Text = "DASHBOARD"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel4
