@@ -3,9 +3,24 @@
 Module MdlDatabase
 
     Private Const ConnString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\dbUsers.mdf;Integrated Security=True"
-
+    Private Const ConnStringBooks As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\dbBooks.mdf;Integrated Security=True"
     Private Function CreateConnection() As SqlConnection
         Return New SqlConnection(ConnString)
+    End Function
+
+    Private Function CreateConnectionBooks() As SqlConnection
+        Return New SqlConnection(ConnStringBooks)
+    End Function
+
+    Public Function DisplayDataBooks(tblName As String) As DataTable
+        Using conn As SqlConnection = CreateConnectionBooks()
+            Dim selectCommand As New SqlCommand($"SELECT * FROM {tblName}", conn)
+            Dim adapter As New SqlDataAdapter(selectCommand)
+            Dim dataset As New DataSet()
+            conn.Open()
+            adapter.Fill(dataset)
+            Return dataset.Tables(0)
+        End Using
     End Function
 
     Public Function DisplayData(tblName As String) As DataTable

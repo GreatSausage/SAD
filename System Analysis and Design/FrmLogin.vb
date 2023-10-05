@@ -12,18 +12,14 @@
         End If
 
         SignInScreen()
-
     End Sub
 
-    Private Sub TxtEmail_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtEmail.KeyDown
-        AntiCopyPasteInput(sender, e)
-    End Sub
-
-    Private Sub TxtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtPassword.KeyDown
+    Private Sub InputKeydown(sender As Object, e As KeyEventArgs) Handles TxtEmail.KeyDown, TxtPassword.KeyDown
         AntiCopyPasteInput(sender, e)
     End Sub
 
     Private Sub TxtEmail_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtEmail.KeyPress
-        AntiSymbolsInput(sender, e)
+        AntiSymbolsandNumberInput(sender, e)
     End Sub
+
 End Class
