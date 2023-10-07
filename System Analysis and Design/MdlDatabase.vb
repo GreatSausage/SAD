@@ -12,16 +12,6 @@ Module MdlDatabase
         Return New SqlConnection(ConnStringBooks)
     End Function
 
-    Public Function DisplayDataBooks(tblName As String) As DataTable
-        Using conn As SqlConnection = CreateConnectionBooks()
-            Dim selectCommand As New SqlCommand($"SELECT * FROM {tblName}", conn)
-            Dim adapter As New SqlDataAdapter(selectCommand)
-            Dim dataset As New DataSet()
-            conn.Open()
-            adapter.Fill(dataset)
-            Return dataset.Tables(0)
-        End Using
-    End Function
 
     Public Function DisplayData(tblName As String) As DataTable
         Using conn As SqlConnection = CreateConnection()
@@ -97,4 +87,49 @@ Module MdlDatabase
 
 #End Region
 
+#Region "manage books"
+    Public Sub AddNewBook(ByVal ISBN As String, ByVal Title As String, ByVal DatePublished As Date, ByVal Author As String, ByVal Copies As Integer)
+        Using conn As SqlConnection = CreateConnectionBooks()
+            Dim insertBookQuery As String = "INSERT INTO tblBooks (ISBN, Title, DatePublished, Author) VALUES (@ISBN, @Title, @DatePublished, @Author); SELECT SCOPE_IDENTITY();"
+            Using command As New SqlCommand(insertBookQuery, conn)
+                command.Parameters.AddWithValue("@ISBN", ISBN)
+                command.Parameters.AddWithValue("@Title", Title)
+                command.Parameters.AddWithValue("@DatePublished", DatePublished)
+                command.Parameters.AddWithValue("@Author", Author)
+                conn.Open()
+                Dim bookID As Integer = Convert.ToInt32(command.ExecuteScalar())
+                conn.Close()
+
+                Dim insertInstancesQuery As String = "INSERT INTO tblBookInstances (BookID, AcquisitionDate, Status) VALUES (@BookID, GETDATE(), 'Available')"
+                Using commandInsertInstance As New SqlCommand(insertInstancesQuery, conn)
+                    commandInsertInstance.Parameters.AddWithValue("@BookID", bookID)
+                    conn.Open()
+                    For i As Integer = 1 To Copies
+                        commandInsertInstance.ExecuteNonQuery()
+                    Next
+                    conn.Close()
+                End Using
+            End Using
+        End Using
+        MessageBox.Show("Book/s have been successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Public Function ISBNExists(ByVal isbn As String) As Boolean
+        Dim exists As Boolean = False
+        Using connection As SqlConnection = CreateConnectionBooks()
+            Dim query As String = "SELECT COUNT(*) FROM tblBooks WHERE ISBN = @ISBN"
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@ISBN", isbn)
+                connection.Open()
+                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                If count > 0 Then
+                    exists = True
+                End If
+            End Using
+        End Using
+        Return exists
+    End Function
+
+
+#End Region
 End Module

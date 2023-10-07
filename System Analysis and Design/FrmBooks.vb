@@ -1,6 +1,8 @@
 ﻿Public Class FrmBooks
     Private Sub FrmBooks_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim table As DataTable = DisplayDataBooks("tblBooksList")
-        Datagridview.DataSource = table
+    End Sub
+
+    Private Sub BtnNewBorrower_Click(sender As Object, e As EventArgs) Handles BtnNewBorrower.Click
+        FrmNewBooks.Show()
     End Sub
 End Class

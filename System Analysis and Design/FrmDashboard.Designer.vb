@@ -205,7 +205,7 @@ Partial Class FrmDashboard
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(332, 49)
         Me.Label7.TabIndex = 1
-        Me.Label7.Text = "Unreturned"
+        Me.Label7.Text = " N/A"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label8
@@ -217,7 +217,7 @@ Partial Class FrmDashboard
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(332, 49)
         Me.Label8.TabIndex = 0
-        Me.Label8.Text = "0"
+        Me.Label8.Text = " 0"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel9
@@ -250,7 +250,7 @@ Partial Class FrmDashboard
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(332, 49)
         Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Borrowed"
+        Me.Label5.Text = " Borrowed"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label6
@@ -262,7 +262,7 @@ Partial Class FrmDashboard
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(332, 49)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "0"
+        Me.Label6.Text = " 0"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel7
@@ -295,7 +295,7 @@ Partial Class FrmDashboard
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(332, 49)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Books"
+        Me.Label3.Text = " Books"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label4
@@ -307,7 +307,7 @@ Partial Class FrmDashboard
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(332, 49)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "0"
+        Me.Label4.Text = " 0"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel6
@@ -340,7 +340,7 @@ Partial Class FrmDashboard
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(332, 49)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Borrowers"
+        Me.Label2.Text = " Borrowers"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label1
@@ -352,7 +352,7 @@ Partial Class FrmDashboard
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(332, 49)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "0"
+        Me.Label1.Text = " 0"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel5
@@ -418,7 +418,7 @@ Partial Class FrmDashboard
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(332, 49)
         Me.Label9.TabIndex = 1
-        Me.Label9.Text = "Overdue"
+        Me.Label9.Text = " Overdue"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label10
@@ -430,7 +430,7 @@ Partial Class FrmDashboard
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(332, 49)
         Me.Label10.TabIndex = 0
-        Me.Label10.Text = "0"
+        Me.Label10.Text = " 0"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel14
@@ -463,7 +463,7 @@ Partial Class FrmDashboard
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(332, 49)
         Me.Label11.TabIndex = 1
-        Me.Label11.Text = "Borrowers"
+        Me.Label11.Text = " Borrowers"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label12
@@ -475,7 +475,7 @@ Partial Class FrmDashboard
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(332, 49)
         Me.Label12.TabIndex = 0
-        Me.Label12.Text = "0"
+        Me.Label12.Text = " 0"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel15
@@ -508,7 +508,7 @@ Partial Class FrmDashboard
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(332, 49)
         Me.Label13.TabIndex = 1
-        Me.Label13.Text = "Returned Books"
+        Me.Label13.Text = " Returned Books"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label14
@@ -520,7 +520,7 @@ Partial Class FrmDashboard
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(332, 49)
         Me.Label14.TabIndex = 0
-        Me.Label14.Text = "0"
+        Me.Label14.Text = " 0"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel16
@@ -553,7 +553,7 @@ Partial Class FrmDashboard
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(332, 49)
         Me.Label15.TabIndex = 1
-        Me.Label15.Text = "Reserved Books"
+        Me.Label15.Text = " Reserved Books"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label16
@@ -565,7 +565,7 @@ Partial Class FrmDashboard
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(332, 49)
         Me.Label16.TabIndex = 0
-        Me.Label16.Text = "0"
+        Me.Label16.Text = " 0"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel17
