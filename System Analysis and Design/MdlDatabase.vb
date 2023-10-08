@@ -134,9 +134,8 @@ Module MdlDatabase
     End Function
 
     Public Sub LoadBooksAndCopies()
-
         Using connection As SqlConnection = CreateConnectionBooks()
-            Dim query As String = "SELECT b.Title, b.ISBN, b.Author, i.Status " &
+            Dim query As String = "SELECT b.Title, b.ISBN, b.Author, b.DatePublished, b.BookID, i.AcquisitionDate, i.Status " &
                                   "FROM tblBooks b " &
                                   "JOIN tblBookInstances i ON b.BookID = i.BookID"
             Dim dataAdapter As New SqlDataAdapter(query, connection)
@@ -145,6 +144,22 @@ Module MdlDatabase
             FrmBooks.Datagridview.DataSource = dataTable
         End Using
     End Sub
+
+    Public Sub AddMultipleCopies(ByVal bookID As Integer, ByVal copies As Integer)
+        Using connection As SqlConnection = CreateConnectionBooks()
+            Dim query As String = "INSERT INTO tblBookInstances (BookID, Status, AcquisitionDate) VALUES (@BookID, 'Available', GETDATE())"
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@BookID", bookID)
+                connection.Open()
+                For i As Integer = 1 To copies
+                    command.ExecuteNonQuery()
+                Next
+                connection.Close()
+            End Using
+        End Using
+    End Sub
+
+
 
 #End Region
 End Module

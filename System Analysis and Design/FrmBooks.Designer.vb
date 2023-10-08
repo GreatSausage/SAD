@@ -41,6 +41,9 @@ Partial Class FrmBooks
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Datagridview = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.BookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DatePublished = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AcquisitionDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ISBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Author = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -145,7 +148,7 @@ Partial Class FrmBooks
         Me.Guna2TextBox1.Name = "Guna2TextBox1"
         Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.Guna2TextBox1.PlaceholderText = "Search Borrowers"
+        Me.Guna2TextBox1.PlaceholderText = "Search Books"
         Me.Guna2TextBox1.SelectedText = ""
         Me.Guna2TextBox1.Size = New System.Drawing.Size(660, 46)
         Me.Guna2TextBox1.TabIndex = 2
@@ -207,7 +210,7 @@ Partial Class FrmBooks
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Datagridview.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Datagridview.ColumnHeadersHeight = 20
-        Me.Datagridview.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookID, Me.Title, Me.ISBN, Me.Author})
+        Me.Datagridview.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookID, Me.DatePublished, Me.Status, Me.AcquisitionDate, Me.Title, Me.ISBN, Me.Author})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -265,7 +268,30 @@ Partial Class FrmBooks
         Me.BookID.MinimumWidth = 6
         Me.BookID.Name = "BookID"
         Me.BookID.ReadOnly = True
-        Me.BookID.Visible = False
+        '
+        'DatePublished
+        '
+        Me.DatePublished.DataPropertyName = "DatePublished"
+        Me.DatePublished.HeaderText = "Date Published"
+        Me.DatePublished.MinimumWidth = 6
+        Me.DatePublished.Name = "DatePublished"
+        Me.DatePublished.ReadOnly = True
+        '
+        'Status
+        '
+        Me.Status.DataPropertyName = "Status"
+        Me.Status.HeaderText = "Status"
+        Me.Status.MinimumWidth = 6
+        Me.Status.Name = "Status"
+        Me.Status.ReadOnly = True
+        '
+        'AcquisitionDate
+        '
+        Me.AcquisitionDate.DataPropertyName = "AcquisitionDate"
+        Me.AcquisitionDate.HeaderText = "Date Added"
+        Me.AcquisitionDate.MinimumWidth = 6
+        Me.AcquisitionDate.Name = "AcquisitionDate"
+        Me.AcquisitionDate.ReadOnly = True
         '
         'Title
         '
@@ -328,6 +354,9 @@ Partial Class FrmBooks
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Datagridview As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents BookID As DataGridViewTextBoxColumn
+    Friend WithEvents DatePublished As DataGridViewTextBoxColumn
+    Friend WithEvents Status As DataGridViewTextBoxColumn
+    Friend WithEvents AcquisitionDate As DataGridViewTextBoxColumn
     Friend WithEvents Title As DataGridViewTextBoxColumn
     Friend WithEvents ISBN As DataGridViewTextBoxColumn
     Friend WithEvents Author As DataGridViewTextBoxColumn

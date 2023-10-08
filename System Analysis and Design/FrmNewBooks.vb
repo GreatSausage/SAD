@@ -1,9 +1,9 @@
 ﻿Imports System.Runtime.Remoting.Channels
 
 Public Class FrmNewBooks
-    Private Sub AntiCopyPaste(sender As Object, e As KeyEventArgs) Handles TxtAuthor.KeyDown, TxtCopies.KeyDown, TxtDatePublished.KeyDown, TxtISBN.KeyDown, TxtTitle.KeyDown
-        AntiCopyPasteInput(sender, e)
-    End Sub
+    'Private Sub AntiCopyPaste(sender As Object, e As KeyEventArgs) Handles TxtAuthor.KeyDown, TxtCopies.KeyDown, TxtDatePublished.KeyDown, TxtISBN.KeyDown, TxtTitle.KeyDown
+    '    AntiCopyPasteInput(sender, e)
+    'End Sub
 
     Private Sub NumberInputs(sender As Object, e As KeyPressEventArgs) Handles TxtCopies.KeyPress, TxtISBN.KeyPress
         NumberOnly(sender, e)
