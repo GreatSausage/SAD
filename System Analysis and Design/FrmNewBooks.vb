@@ -19,6 +19,7 @@ Public Class FrmNewBooks
             MessageBox.Show("The ISBN already exists, please provide a unique ISBN", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             AddNewBook(TxtISBN.Text, TxtTitle.Text, DateTime.Parse(TxtDatePublished.Text), TxtAuthor.Text, Integer.Parse(TxtCopies.Text))
+            LoadBooksAndCopies()
         End If
     End Sub
 

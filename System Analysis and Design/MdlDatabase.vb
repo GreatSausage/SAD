@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Web.UI.WebControls
 
 Module MdlDatabase
 
@@ -23,6 +24,7 @@ Module MdlDatabase
             Return dataset.Tables(0)
         End Using
     End Function
+
 
 #Region "Sign in screen functions"
     Public Function SignInScreen() As Boolean
@@ -112,6 +114,7 @@ Module MdlDatabase
             End Using
         End Using
         MessageBox.Show("Book/s have been successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        FrmNewBooks.Close()
     End Sub
 
     Public Function ISBNExists(ByVal isbn As String) As Boolean
@@ -130,6 +133,18 @@ Module MdlDatabase
         Return exists
     End Function
 
+    Public Sub LoadBooksAndCopies()
+
+        Using connection As SqlConnection = CreateConnectionBooks()
+            Dim query As String = "SELECT b.Title, b.ISBN, b.Author, i.Status " &
+                                  "FROM tblBooks b " &
+                                  "JOIN tblBookInstances i ON b.BookID = i.BookID"
+            Dim dataAdapter As New SqlDataAdapter(query, connection)
+            Dim dataTable As New DataTable()
+            dataAdapter.Fill(dataTable)
+            FrmBooks.Datagridview.DataSource = dataTable
+        End Using
+    End Sub
 
 #End Region
 End Module

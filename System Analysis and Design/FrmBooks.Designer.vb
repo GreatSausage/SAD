@@ -40,15 +40,10 @@ Partial Class FrmBooks
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Datagridview = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.isbn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.title = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.author = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.datePublished = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.genre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.copiesAvailable = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.totalCopies = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ISBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Author = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.Datagridview, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -212,7 +207,7 @@ Partial Class FrmBooks
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Datagridview.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Datagridview.ColumnHeadersHeight = 20
-        Me.Datagridview.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.isbn, Me.title, Me.author, Me.datePublished, Me.genre, Me.status, Me.copiesAvailable, Me.totalCopies, Me.id})
+        Me.Datagridview.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookID, Me.Title, Me.ISBN, Me.Author})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -263,78 +258,38 @@ Partial Class FrmBooks
         Me.Datagridview.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Datagridview.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'isbn
+        'BookID
         '
-        Me.isbn.DataPropertyName = "isbn"
-        Me.isbn.HeaderText = "ISBN"
-        Me.isbn.MinimumWidth = 6
-        Me.isbn.Name = "isbn"
-        Me.isbn.ReadOnly = True
+        Me.BookID.DataPropertyName = "BookID"
+        Me.BookID.HeaderText = "Book ID"
+        Me.BookID.MinimumWidth = 6
+        Me.BookID.Name = "BookID"
+        Me.BookID.ReadOnly = True
+        Me.BookID.Visible = False
         '
-        'title
+        'Title
         '
-        Me.title.DataPropertyName = "title"
-        Me.title.HeaderText = "Title"
-        Me.title.MinimumWidth = 6
-        Me.title.Name = "title"
-        Me.title.ReadOnly = True
+        Me.Title.DataPropertyName = "Title"
+        Me.Title.HeaderText = "Title"
+        Me.Title.MinimumWidth = 6
+        Me.Title.Name = "Title"
+        Me.Title.ReadOnly = True
         '
-        'author
+        'ISBN
         '
-        Me.author.DataPropertyName = "author"
-        Me.author.HeaderText = "Author"
-        Me.author.MinimumWidth = 6
-        Me.author.Name = "author"
-        Me.author.ReadOnly = True
+        Me.ISBN.DataPropertyName = "ISBN"
+        Me.ISBN.HeaderText = "ISBN"
+        Me.ISBN.MinimumWidth = 6
+        Me.ISBN.Name = "ISBN"
+        Me.ISBN.ReadOnly = True
         '
-        'datePublished
+        'Author
         '
-        Me.datePublished.DataPropertyName = "datePublished"
-        Me.datePublished.HeaderText = "Date Published"
-        Me.datePublished.MinimumWidth = 6
-        Me.datePublished.Name = "datePublished"
-        Me.datePublished.ReadOnly = True
-        '
-        'genre
-        '
-        Me.genre.DataPropertyName = "genre"
-        Me.genre.HeaderText = "Genre"
-        Me.genre.MinimumWidth = 6
-        Me.genre.Name = "genre"
-        Me.genre.ReadOnly = True
-        '
-        'status
-        '
-        Me.status.DataPropertyName = "status"
-        Me.status.HeaderText = "Status"
-        Me.status.MinimumWidth = 6
-        Me.status.Name = "status"
-        Me.status.ReadOnly = True
-        '
-        'copiesAvailable
-        '
-        Me.copiesAvailable.DataPropertyName = "copiesAvailable"
-        Me.copiesAvailable.HeaderText = "Copies Available"
-        Me.copiesAvailable.MinimumWidth = 6
-        Me.copiesAvailable.Name = "copiesAvailable"
-        Me.copiesAvailable.ReadOnly = True
-        '
-        'totalCopies
-        '
-        Me.totalCopies.DataPropertyName = "totalCopies"
-        Me.totalCopies.HeaderText = "Total Copies"
-        Me.totalCopies.MinimumWidth = 6
-        Me.totalCopies.Name = "totalCopies"
-        Me.totalCopies.ReadOnly = True
-        '
-        'id
-        '
-        Me.id.DataPropertyName = "id"
-        Me.id.HeaderText = "id"
-        Me.id.MinimumWidth = 6
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Visible = False
+        Me.Author.DataPropertyName = "Author"
+        Me.Author.HeaderText = "Author"
+        Me.Author.MinimumWidth = 6
+        Me.Author.Name = "Author"
+        Me.Author.ReadOnly = True
         '
         'FrmBooks
         '
@@ -372,13 +327,8 @@ Partial Class FrmBooks
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Datagridview As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents isbn As DataGridViewTextBoxColumn
-    Friend WithEvents title As DataGridViewTextBoxColumn
-    Friend WithEvents author As DataGridViewTextBoxColumn
-    Friend WithEvents datePublished As DataGridViewTextBoxColumn
-    Friend WithEvents genre As DataGridViewTextBoxColumn
-    Friend WithEvents status As DataGridViewTextBoxColumn
-    Friend WithEvents copiesAvailable As DataGridViewTextBoxColumn
-    Friend WithEvents totalCopies As DataGridViewTextBoxColumn
-    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents BookID As DataGridViewTextBoxColumn
+    Friend WithEvents Title As DataGridViewTextBoxColumn
+    Friend WithEvents ISBN As DataGridViewTextBoxColumn
+    Friend WithEvents Author As DataGridViewTextBoxColumn
 End Class
