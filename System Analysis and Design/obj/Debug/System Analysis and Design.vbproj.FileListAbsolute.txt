@@ -24,3 +24,4 @@ C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and De
 C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmBooks.resources
 C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmNewBooks.resources
 C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmBookInfo.resources
+C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\obj\Debug\System_Analysis_and_Design.FrmBorrowerInfo.resources

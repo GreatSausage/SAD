@@ -94,56 +94,62 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmBookInfo.Designer.vb">
+    <Compile Include="Forms\FrmBookInfo.Designer.vb">
       <DependentUpon>FrmBookInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBookInfo.vb">
+    <Compile Include="Forms\FrmBookInfo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBooks.Designer.vb">
+    <Compile Include="Forms\FrmBooks.Designer.vb">
       <DependentUpon>FrmBooks.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBooks.vb">
+    <Compile Include="Forms\FrmBooks.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBorrowers.Designer.vb">
+    <Compile Include="Forms\FrmBorrowerInfo.Designer.vb">
+      <DependentUpon>FrmBorrowerInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBorrowerInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBorrowers.Designer.vb">
       <DependentUpon>FrmBorrowers.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBorrowers.vb">
+    <Compile Include="Forms\FrmBorrowers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDashboard.Designer.vb">
+    <Compile Include="Forms\FrmDashboard.Designer.vb">
       <DependentUpon>FrmDashboard.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmDashboard.vb">
+    <Compile Include="Forms\FrmDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.vb">
+    <Compile Include="Forms\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.vb">
+    <Compile Include="Forms\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.vb">
+    <Compile Include="Forms\FrmMain.Designer.vb">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.vb">
+    <Compile Include="Forms\FrmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNewBooks.Designer.vb">
+    <Compile Include="Forms\FrmNewBooks.Designer.vb">
       <DependentUpon>FrmNewBooks.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmNewBooks.vb">
+    <Compile Include="Forms\FrmNewBooks.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNewBorrower.Designer.vb">
+    <Compile Include="Forms\FrmNewBorrower.Designer.vb">
       <DependentUpon>FrmNewBorrower.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmNewBorrower.vb">
+    <Compile Include="Forms\FrmNewBorrower.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MdlDatabase.vb" />
-    <Compile Include="MdlFunctions.vb" />
+    <Compile Include="Modules\MdlDatabase.vb" />
+    <Compile Include="Modules\MdlFunctions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -162,28 +168,31 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmBookInfo.resx">
+    <EmbeddedResource Include="Forms\FrmBookInfo.resx">
       <DependentUpon>FrmBookInfo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBooks.resx">
+    <EmbeddedResource Include="Forms\FrmBooks.resx">
       <DependentUpon>FrmBooks.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBorrowers.resx">
+    <EmbeddedResource Include="Forms\FrmBorrowerInfo.resx">
+      <DependentUpon>FrmBorrowerInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBorrowers.resx">
       <DependentUpon>FrmBorrowers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDashboard.resx">
+    <EmbeddedResource Include="Forms\FrmDashboard.resx">
       <DependentUpon>FrmDashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
+    <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNewBooks.resx">
+    <EmbeddedResource Include="Forms\FrmNewBooks.resx">
       <DependentUpon>FrmNewBooks.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNewBorrower.resx">
+    <EmbeddedResource Include="Forms\FrmNewBorrower.resx">
       <DependentUpon>FrmNewBorrower.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -234,5 +243,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
