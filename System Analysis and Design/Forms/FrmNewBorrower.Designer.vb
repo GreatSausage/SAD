@@ -62,7 +62,6 @@ Partial Class FrmNewBorrower
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel2.SuspendLayout()
@@ -73,7 +72,6 @@ Partial Class FrmNewBorrower
         Me.Panel4.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -82,12 +80,14 @@ Partial Class FrmNewBorrower
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 10)
+        Me.Panel1.Size = New System.Drawing.Size(401, 10)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Guna2Button2)
         Me.Panel2.Controls.Add(Me.Panel8)
+        Me.Panel2.Controls.Add(Me.Guna2Button1)
         Me.Panel2.Controls.Add(Me.Panel7)
         Me.Panel2.Controls.Add(Me.Panel6)
         Me.Panel2.Controls.Add(Me.Panel5)
@@ -97,7 +97,7 @@ Partial Class FrmNewBorrower
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 10)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(401, 440)
+        Me.Panel2.Size = New System.Drawing.Size(401, 528)
         Me.Panel2.TabIndex = 1
         '
         'Panel8
@@ -534,27 +534,18 @@ Partial Class FrmNewBorrower
         Me.Label1.Text = " New Borrower"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.White
-        Me.PictureBox1.Location = New System.Drawing.Point(431, 78)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(340, 284)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
         'Guna2Button1
         '
         Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(431, 378)
+        Me.Guna2Button1.Location = New System.Drawing.Point(10, 476)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(160, 44)
+        Me.Guna2Button1.Size = New System.Drawing.Size(381, 44)
         Me.Guna2Button1.TabIndex = 3
         Me.Guna2Button1.Text = "Cancel"
         '
@@ -567,9 +558,9 @@ Partial Class FrmNewBorrower
         Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(611, 378)
+        Me.Guna2Button2.Location = New System.Drawing.Point(10, 426)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(160, 44)
+        Me.Guna2Button2.Size = New System.Drawing.Size(381, 44)
         Me.Guna2Button2.TabIndex = 4
         Me.Guna2Button2.Text = "Done"
         '
@@ -578,11 +569,8 @@ Partial Class FrmNewBorrower
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(401, 538)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Guna2Button2)
-        Me.Controls.Add(Me.Guna2Button1)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -596,7 +584,6 @@ Partial Class FrmNewBorrower
         Me.Panel4.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -640,7 +627,6 @@ Partial Class FrmNewBorrower
     Friend WithEvents Panel25 As Panel
     Friend WithEvents Panel23 As Panel
     Friend WithEvents Panel22 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button

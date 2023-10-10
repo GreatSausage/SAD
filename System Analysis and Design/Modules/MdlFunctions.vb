@@ -29,26 +29,24 @@
     End Sub
 
     Public Sub AntiSymbolsandNumberInput(sender As Object, e As KeyPressEventArgs)
-        'keypress
-        If Not Char.IsLetter(e.KeyChar) AndAlso e.KeyChar <> "-"c AndAlso e.KeyChar <> ChrW(Keys.Back) Then
+        If Not Char.IsLetter(e.KeyChar) AndAlso e.KeyChar <> "-"c AndAlso e.KeyChar <> ControlChars.Back Then
             e.Handled = True
         End If
     End Sub
 
     Public Sub LetterOnly(sender As Object, e As KeyPressEventArgs)
-        If Not Char.IsLetter(e.KeyChar) AndAlso e.KeyChar <> ChrW(Keys.Back) Then
+        If Not Char.IsLetter(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
             e.Handled = True
         End If
     End Sub
 
     Public Sub NumberOnly(sender As Object, e As KeyPressEventArgs)
-        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ChrW(Keys.Back) Then
+        If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> ControlChars.Back Then
             e.Handled = True
         End If
     End Sub
 
     Public Sub AntiCopyPasteInput(sender As Object, e As KeyEventArgs)
-        'keydown
         If e.Control AndAlso (e.KeyCode = Keys.V OrElse e.KeyCode = Keys.C) Then
             e.SuppressKeyPress = True
         End If

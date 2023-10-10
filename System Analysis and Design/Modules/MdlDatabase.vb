@@ -3,28 +3,11 @@ Imports System.Web.UI.WebControls
 
 Module MdlDatabase
 
-    Private Const ConnString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\dbUsers.mdf;Integrated Security=True"
     Private Const ConnStringBooks As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\dbBooks.mdf;Integrated Security=True"
-    Private Function CreateConnection() As SqlConnection
-        Return New SqlConnection(ConnString)
-    End Function
 
     Private Function CreateConnectionBooks() As SqlConnection
         Return New SqlConnection(ConnStringBooks)
     End Function
-
-
-    Public Function DisplayData(tblName As String) As DataTable
-        Using conn As SqlConnection = CreateConnection()
-            Dim selectCommand As New SqlCommand($"SELECT * FROM {tblName}", conn)
-            Dim adapter As New SqlDataAdapter(selectCommand)
-            Dim dataset As New DataSet()
-            conn.Open()
-            adapter.Fill(dataset)
-            Return dataset.Tables(0)
-        End Using
-    End Function
-
 
 #Region "Sign in screen functions"
     Public Function SignInScreen() As Boolean
@@ -38,7 +21,7 @@ Module MdlDatabase
         End If
 
         Dim query As String = $"SELECT COUNT(*) FROM {tableName} WHERE email = @email AND password = @password"
-        Using conn As SqlConnection = CreateConnection()
+        Using conn As SqlConnection = CreateConnectionBooks()
             Dim command As New SqlCommand(query, conn)
             command.Parameters.AddWithValue("@email", email)
             command.Parameters.AddWithValue("@password", password)
@@ -56,7 +39,7 @@ Module MdlDatabase
 
     Private Function CheckExists(tableName As String, email As String) As Boolean
         Dim query As String = $"SELECT COUNT(*) FROM {tableName} WHERE email = @email"
-        Using conn As SqlConnection = CreateConnection()
+        Using conn As SqlConnection = CreateConnectionBooks()
             Dim command As New SqlCommand(query, conn)
             command.Parameters.AddWithValue("@email", email)
             conn.Open()
@@ -67,8 +50,20 @@ Module MdlDatabase
 #End Region
 
 #Region "manage borrower functions"
+
+    Public Function DisplayData(tblName As String) As DataTable
+        Using conn As SqlConnection = CreateConnectionBooks()
+            Dim selectCommand As New SqlCommand($"SELECT * FROM {tblName}", conn)
+            Dim adapter As New SqlDataAdapter(selectCommand)
+            Dim dataset As New DataSet()
+            conn.Open()
+            adapter.Fill(dataset)
+            Return dataset.Tables(0)
+        End Using
+    End Function
+
     Public Sub InsertBorrowers()
-        Using conn As SqlConnection = CreateConnection()
+        Using conn As SqlConnection = CreateConnectionBooks()
             Dim insertCommand As New SqlCommand("INSERT INTO tblBorrowers (lrn, firstName, lastName, grade, section, guardianContact) VALUES (@lrn, @firstName, @lastName, @grade, @section, @guardianContact)", conn)
             With insertCommand.Parameters
                 .AddWithValue("@lrn", FrmNewBorrower.TxtLRN.Text)
@@ -80,6 +75,7 @@ Module MdlDatabase
             End With
             conn.Open()
             insertCommand.ExecuteNonQuery()
+
             MessageBox.Show("Added Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             FrmNewBorrower.Close()
             Dim table As DataTable = DisplayData("tblBorrowers")
@@ -87,10 +83,63 @@ Module MdlDatabase
         End Using
     End Sub
 
+    Public Function LRNExists(ByVal lrn As String) As Boolean
+        Dim exists As Boolean = False
+        Using connection As SqlConnection = CreateConnectionBooks()
+            Dim query As String = "SELECT COUNT(*) FROM tblBorrowers WHERE LRN = @lrn"
+            Using command As New SqlCommand(query, connection)
+                command.Parameters.AddWithValue("@lrn", lrn)
+                connection.Open()
+                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                If count > 0 Then
+                    exists = True
+                End If
+            End Using
+        End Using
+        Return exists
+    End Function
+
+    Public Sub UpdateBorrowers(borrowerID As Integer, lrn As String, firstname As String, lastname As String, grade As String, section As String, contact As String)
+        Using conn As SqlConnection = CreateConnectionBooks()
+            Dim updateCommand As New SqlCommand("UPDATE tblBorrowers SET LRN = @lrn, FirstName = @firstname, LastName = @lastname, Grade = @grade, Section = @section, GuardianContact = @guardiancontact
+                                                 WHERE BorrowerID = @borrowerID", conn)
+            With updateCommand.Parameters
+                .AddWithValue("@borrowerID", borrowerID)
+                .AddWithValue("@lrn", lrn)
+                .AddWithValue("@firstname", firstname)
+                .AddWithValue("@lastname", lastname)
+                .AddWithValue("@grade", grade)
+                .AddWithValue("@section", section)
+                .AddWithValue("@guardiancontact", contact)
+            End With
+            conn.Open()
+            updateCommand.ExecuteNonQuery()
+            MessageBox.Show("Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim table As DataTable = DisplayData("tblBorrowers")
+            FrmBorrowers.Datagridview.DataSource = table
+        End Using
+    End Sub
+
+    Public Sub SearchBorrowers(datagridview As DataGridView, search As String)
+        Using connection As SqlConnection = CreateConnectionBooks()
+            Dim query As String = "SELECT * FROM tblBorrowers"
+            If Not String.IsNullOrEmpty(search) Then
+                query += " WHERE Firstname LIKE @search OR Lastname LIKE @search OR LRN LIKE @search"
+            End If
+            Dim command As New SqlCommand(query, connection)
+            If Not String.IsNullOrEmpty(search) Then
+                command.Parameters.AddWithValue("@search", "%" & search & "%")
+            End If
+            Dim adapter = New SqlDataAdapter(command)
+            Dim dataset = New DataSet
+            adapter.Fill(dataset)
+            datagridview.DataSource = dataset.Tables(0)
+        End Using
+    End Sub
+
 #End Region
 
 #Region "manage books"
-
     Public Sub AddNewBook(ByVal ISBN As String, ByVal Title As String, ByVal DatePublished As Date, ByVal Author As String, ByVal Copies As Integer)
         Using conn As SqlConnection = CreateConnectionBooks()
             Dim insertBookQuery As String = "INSERT INTO tblBooks (ISBN, Title, DatePublished, Author) VALUES (@ISBN, @Title, @DatePublished, @Author); SELECT SCOPE_IDENTITY();"
@@ -176,4 +225,5 @@ Module MdlDatabase
     End Sub
 
 #End Region
+
 End Module

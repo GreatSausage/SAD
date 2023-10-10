@@ -22,17 +22,17 @@ Partial Class FrmBorrowers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.BtnNewBorrower = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -40,13 +40,13 @@ Partial Class FrmBorrowers
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Datagridview = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lrn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.firstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.grade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.section = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.guardianContact = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BorrowerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LRN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Firstname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Lastname = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Grade = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Section = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GuardianContact = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.Datagridview, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,7 +80,7 @@ Partial Class FrmBorrowers
         Me.Panel4.Controls.Add(Me.Panel6)
         Me.Panel4.Controls.Add(Me.BtnNewBorrower)
         Me.Panel4.Controls.Add(Me.Panel5)
-        Me.Panel4.Controls.Add(Me.Guna2TextBox1)
+        Me.Panel4.Controls.Add(Me.TxtSearch)
         Me.Panel4.Controls.Add(Me.Panel3)
         Me.Panel4.Controls.Add(Me.Panel2)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
@@ -122,28 +122,28 @@ Partial Class FrmBorrowers
         Me.Panel5.Size = New System.Drawing.Size(36, 46)
         Me.Panel5.TabIndex = 3
         '
-        'Guna2TextBox1
+        'TxtSearch
         '
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(0, 45)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.Guna2TextBox1.PlaceholderText = "Search Borrowers"
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(660, 46)
-        Me.Guna2TextBox1.TabIndex = 2
+        Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtSearch.DefaultText = ""
+        Me.TxtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.Dock = System.Windows.Forms.DockStyle.Left
+        Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.TxtSearch.Location = New System.Drawing.Point(0, 45)
+        Me.TxtSearch.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtSearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.TxtSearch.PlaceholderText = "Search Borrowers"
+        Me.TxtSearch.SelectedText = ""
+        Me.TxtSearch.Size = New System.Drawing.Size(660, 46)
+        Me.TxtSearch.TabIndex = 2
         '
         'Panel3
         '
@@ -199,46 +199,46 @@ Partial Class FrmBorrowers
         Me.Datagridview.AllowUserToDeleteRows = False
         Me.Datagridview.AllowUserToResizeColumns = False
         Me.Datagridview.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.Datagridview.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Datagridview.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.Datagridview.ColumnHeadersHeight = 20
-        Me.Datagridview.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.lrn, Me.firstName, Me.lastName, Me.grade, Me.section, Me.guardianContact})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Datagridview.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        Me.Datagridview.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Datagridview.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.Datagridview.ColumnHeadersHeight = 25
+        Me.Datagridview.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BorrowerID, Me.LRN, Me.Firstname, Me.Lastname, Me.Grade, Me.Section, Me.GuardianContact})
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Datagridview.DefaultCellStyle = DataGridViewCellStyle7
         Me.Datagridview.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Datagridview.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Datagridview.Location = New System.Drawing.Point(10, 159)
         Me.Datagridview.MultiSelect = False
         Me.Datagridview.Name = "Datagridview"
         Me.Datagridview.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Datagridview.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Datagridview.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.Datagridview.RowHeadersVisible = False
         Me.Datagridview.RowHeadersWidth = 51
         Me.Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.Datagridview.RowTemplate.Height = 24
         Me.Datagridview.Size = New System.Drawing.Size(1904, 915)
-        Me.Datagridview.TabIndex = 9
+        Me.Datagridview.TabIndex = 16
         Me.Datagridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.Datagridview.ThemeStyle.AlternatingRowsStyle.Font = Nothing
         Me.Datagridview.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
@@ -251,7 +251,7 @@ Partial Class FrmBorrowers
         Me.Datagridview.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Datagridview.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.Datagridview.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.Datagridview.ThemeStyle.HeaderStyle.Height = 20
+        Me.Datagridview.ThemeStyle.HeaderStyle.Height = 25
         Me.Datagridview.ThemeStyle.ReadOnly = True
         Me.Datagridview.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.Datagridview.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
@@ -261,62 +261,61 @@ Partial Class FrmBorrowers
         Me.Datagridview.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Datagridview.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'id
+        'BorrowerID
         '
-        Me.id.DataPropertyName = "id"
-        Me.id.HeaderText = "ID"
-        Me.id.MinimumWidth = 6
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        Me.id.Visible = False
+        Me.BorrowerID.DataPropertyName = "BorrowerID"
+        Me.BorrowerID.HeaderText = "BorrowerID"
+        Me.BorrowerID.MinimumWidth = 6
+        Me.BorrowerID.Name = "BorrowerID"
+        Me.BorrowerID.ReadOnly = True
         '
-        'lrn
+        'LRN
         '
-        Me.lrn.DataPropertyName = "lrn"
-        Me.lrn.HeaderText = "LRN"
-        Me.lrn.MinimumWidth = 6
-        Me.lrn.Name = "lrn"
-        Me.lrn.ReadOnly = True
+        Me.LRN.DataPropertyName = "LRN"
+        Me.LRN.HeaderText = "LRN"
+        Me.LRN.MinimumWidth = 6
+        Me.LRN.Name = "LRN"
+        Me.LRN.ReadOnly = True
         '
-        'firstName
+        'Firstname
         '
-        Me.firstName.DataPropertyName = "firstName"
-        Me.firstName.HeaderText = "Firstname"
-        Me.firstName.MinimumWidth = 6
-        Me.firstName.Name = "firstName"
-        Me.firstName.ReadOnly = True
+        Me.Firstname.DataPropertyName = "Firstname"
+        Me.Firstname.HeaderText = "Firstname"
+        Me.Firstname.MinimumWidth = 6
+        Me.Firstname.Name = "Firstname"
+        Me.Firstname.ReadOnly = True
         '
-        'lastName
+        'Lastname
         '
-        Me.lastName.DataPropertyName = "lastName"
-        Me.lastName.HeaderText = "Lastname"
-        Me.lastName.MinimumWidth = 6
-        Me.lastName.Name = "lastName"
-        Me.lastName.ReadOnly = True
+        Me.Lastname.DataPropertyName = "Lastname"
+        Me.Lastname.HeaderText = "Lastname"
+        Me.Lastname.MinimumWidth = 6
+        Me.Lastname.Name = "Lastname"
+        Me.Lastname.ReadOnly = True
         '
-        'grade
+        'Grade
         '
-        Me.grade.DataPropertyName = "grade"
-        Me.grade.HeaderText = "Grade"
-        Me.grade.MinimumWidth = 6
-        Me.grade.Name = "grade"
-        Me.grade.ReadOnly = True
+        Me.Grade.DataPropertyName = "Grade"
+        Me.Grade.HeaderText = "Grade"
+        Me.Grade.MinimumWidth = 6
+        Me.Grade.Name = "Grade"
+        Me.Grade.ReadOnly = True
         '
-        'section
+        'Section
         '
-        Me.section.DataPropertyName = "section"
-        Me.section.HeaderText = "Section"
-        Me.section.MinimumWidth = 6
-        Me.section.Name = "section"
-        Me.section.ReadOnly = True
+        Me.Section.DataPropertyName = "Section"
+        Me.Section.HeaderText = "Section"
+        Me.Section.MinimumWidth = 6
+        Me.Section.Name = "Section"
+        Me.Section.ReadOnly = True
         '
-        'guardianContact
+        'GuardianContact
         '
-        Me.guardianContact.DataPropertyName = "guardianContact"
-        Me.guardianContact.HeaderText = "Guardian Contact"
-        Me.guardianContact.MinimumWidth = 6
-        Me.guardianContact.Name = "guardianContact"
-        Me.guardianContact.ReadOnly = True
+        Me.GuardianContact.DataPropertyName = "GuardianContact"
+        Me.GuardianContact.HeaderText = "GuardianContact"
+        Me.GuardianContact.MinimumWidth = 6
+        Me.GuardianContact.Name = "GuardianContact"
+        Me.GuardianContact.ReadOnly = True
         '
         'FrmBorrowers
         '
@@ -344,7 +343,7 @@ Partial Class FrmBorrowers
     Friend WithEvents Label17 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel6 As Panel
@@ -354,11 +353,11 @@ Partial Class FrmBorrowers
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Datagridview As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents lrn As DataGridViewTextBoxColumn
-    Friend WithEvents firstName As DataGridViewTextBoxColumn
-    Friend WithEvents lastName As DataGridViewTextBoxColumn
-    Friend WithEvents grade As DataGridViewTextBoxColumn
-    Friend WithEvents section As DataGridViewTextBoxColumn
-    Friend WithEvents guardianContact As DataGridViewTextBoxColumn
+    Friend WithEvents BorrowerID As DataGridViewTextBoxColumn
+    Friend WithEvents LRN As DataGridViewTextBoxColumn
+    Friend WithEvents Firstname As DataGridViewTextBoxColumn
+    Friend WithEvents Lastname As DataGridViewTextBoxColumn
+    Friend WithEvents Grade As DataGridViewTextBoxColumn
+    Friend WithEvents Section As DataGridViewTextBoxColumn
+    Friend WithEvents GuardianContact As DataGridViewTextBoxColumn
 End Class
