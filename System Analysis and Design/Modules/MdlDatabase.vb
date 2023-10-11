@@ -1,5 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Web.UI.WebControls
 
 Module MdlDatabase
 
@@ -50,7 +49,6 @@ Module MdlDatabase
 #End Region
 
 #Region "manage borrower functions"
-
     Public Function DisplayData(tblName As String) As DataTable
         Using conn As SqlConnection = CreateConnectionBooks()
             Dim selectCommand As New SqlCommand($"SELECT * FROM {tblName}", conn)
@@ -98,7 +96,6 @@ Module MdlDatabase
         End Using
         Return exists
     End Function
-
     Public Sub UpdateBorrowers(borrowerID As Integer, lrn As String, firstname As String, lastname As String, grade As String, section As String, contact As String)
         Using conn As SqlConnection = CreateConnectionBooks()
             Dim updateCommand As New SqlCommand("UPDATE tblBorrowers SET LRN = @lrn, FirstName = @firstname, LastName = @lastname, Grade = @grade, Section = @section, GuardianContact = @guardiancontact
@@ -119,7 +116,6 @@ Module MdlDatabase
             FrmBorrowers.Datagridview.DataSource = table
         End Using
     End Sub
-
     Public Sub SearchBorrowers(datagridview As DataGridView, search As String)
         Using connection As SqlConnection = CreateConnectionBooks()
             Dim query As String = "SELECT * FROM tblBorrowers"
@@ -142,7 +138,8 @@ Module MdlDatabase
 #Region "manage books"
     Public Sub AddNewBook(ByVal ISBN As String, ByVal Title As String, ByVal DatePublished As Date, ByVal Author As String, ByVal Copies As Integer)
         Using conn As SqlConnection = CreateConnectionBooks()
-            Dim insertBookQuery As String = "INSERT INTO tblBooks (ISBN, Title, DatePublished, Author) VALUES (@ISBN, @Title, @DatePublished, @Author); SELECT SCOPE_IDENTITY();"
+            Dim insertBookQuery As String = "INSERT INTO tblBooks (ISBN, Title, DatePublished, Author) 
+                                             VALUES (@ISBN, @Title, @DatePublished, @Author); SELECT SCOPE_IDENTITY();"
             Using command As New SqlCommand(insertBookQuery, conn)
                 command.Parameters.AddWithValue("@ISBN", ISBN)
                 command.Parameters.AddWithValue("@Title", Title)
@@ -152,7 +149,8 @@ Module MdlDatabase
                 Dim bookID As Integer = Convert.ToInt32(command.ExecuteScalar())
                 conn.Close()
 
-                Dim insertInstancesQuery As String = "INSERT INTO tblBookInstances (BookID, AcquisitionDate, Status) VALUES (@BookID, GETDATE(), 'Available')"
+                Dim insertInstancesQuery As String = "INSERT INTO tblBookInstances (BookID, AcquisitionDate, Status) 
+                                                      VALUES (@BookID, GETDATE(), 'Available')"
                 Using commandInsertInstance As New SqlCommand(insertInstancesQuery, conn)
                     commandInsertInstance.Parameters.AddWithValue("@BookID", bookID)
                     conn.Open()
@@ -185,24 +183,23 @@ Module MdlDatabase
 
     Public Sub LoadUniqueBooks()
         Using connection As SqlConnection = CreateConnectionBooks()
-            Dim query As String = "SELECT b.ISBN, b.Title, b.Author, b.DatePublished,
+            Dim query As String = "SELECT b.ISBN, b.Title, b.Author, b.BookID, b.DatePublished,
                                    SUM(CASE WHEN i.Status = 'Available' THEN 1 ELSE 0 END) AS [Available Copies],
                                    COUNT(i.InstanceID) AS [Total Copies]
                                    FROM tblBooks b JOIN tblBookInstances i ON b.BookID = i.BookID 
-                                   GROUP BY b.ISBN, b.Title, b.Author, b.DatePublished"
+                                   GROUP BY b.ISBN, b.Title, b.Author, b.BookID, b.DatePublished"
             Dim dataAdapter As New SqlDataAdapter(query, connection)
             Dim dataTable As New DataTable()
             dataAdapter.Fill(dataTable)
             FrmBooks.UniqueDatagrid.DataSource = dataTable
         End Using
-
     End Sub
 
     Public Sub LoadBookCopies()
         Using connection As SqlConnection = CreateConnectionBooks()
-            Dim query As String = "SELECT b.Title, b.ISBN, b.Author, b.DatePublished, b.BookID, i.AcquisitionDate, i.Status " &
-                                  "FROM tblBooks b " &
-                                  "JOIN tblBookInstances i ON b.BookID = i.BookID"
+            Dim query As String = "SELECT b.Title, b.ISBN, b.Author, b.DatePublished, i.AcquisitionDate, i.Status, i.InstanceID 
+                                   FROM tblBooks b 
+                                   JOIN tblBookInstances i ON b.BookID = i.BookID"
             Dim dataAdapter As New SqlDataAdapter(query, connection)
             Dim dataTable As New DataTable()
             dataAdapter.Fill(dataTable)
@@ -212,7 +209,8 @@ Module MdlDatabase
 
     Public Sub AddMultipleCopies(ByVal bookID As Integer, ByVal copies As Integer)
         Using connection As SqlConnection = CreateConnectionBooks()
-            Dim query As String = "INSERT INTO tblBookInstances (BookID, Status, AcquisitionDate) VALUES (@BookID, 'Available', GETDATE())"
+            Dim query As String = "INSERT INTO tblBookInstances (BookID, Status, AcquisitionDate) 
+                                   VALUES (@BookID, 'Available', GETDATE())"
             Using command As New SqlCommand(query, connection)
                 command.Parameters.AddWithValue("@BookID", bookID)
                 connection.Open()
@@ -221,6 +219,23 @@ Module MdlDatabase
                 Next
                 connection.Close()
             End Using
+        End Using
+    End Sub
+
+    Public Sub SearchBooks(datagridview As DataGridView, search As String)
+        Using connection As SqlConnection = CreateConnectionBooks()
+            Dim query As String = "SELECT * FROM tblBooks"
+            If Not String.IsNullOrEmpty(search) Then
+                query += " WHERE ISBN LIKE @search OR Title LIKE @search OR Author LIKE @search"
+            End If
+            Dim command As New SqlCommand(query, connection)
+            If Not String.IsNullOrEmpty(search) Then
+                command.Parameters.AddWithValue("@search", "%" & search & "%")
+            End If
+            Dim adapter = New SqlDataAdapter(command)
+            Dim dataset = New DataSet
+            adapter.Fill(dataset)
+            datagridview.DataSource = dataset.Tables(0)
         End Using
     End Sub
 

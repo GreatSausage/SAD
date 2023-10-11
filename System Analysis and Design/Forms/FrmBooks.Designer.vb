@@ -22,21 +22,21 @@ Partial Class FrmBooks
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.BtnNewBorrower = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TxtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
@@ -45,13 +45,6 @@ Partial Class FrmBooks
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Unique = New System.Windows.Forms.TabPage()
         Me.UniqueDatagrid = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Copies = New System.Windows.Forms.TabPage()
-        Me.Datagridview = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.ISBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Author = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AcquisitionDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UniqueISBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UniqueTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -59,7 +52,15 @@ Partial Class FrmBooks
         Me.UniqueDatePublished = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UniqueAvailableCopies = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UniqueTotalCopies = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UniqueBookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Copies = New System.Windows.Forms.TabPage()
+        Me.Datagridview = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.ISBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Title = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Author = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DatePublished = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AcquisitionDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InstanceID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -104,7 +105,7 @@ Partial Class FrmBooks
         '
         Me.Panel4.Controls.Add(Me.BtnNewBorrower)
         Me.Panel4.Controls.Add(Me.Panel5)
-        Me.Panel4.Controls.Add(Me.Guna2TextBox1)
+        Me.Panel4.Controls.Add(Me.TxtSearch)
         Me.Panel4.Controls.Add(Me.Panel3)
         Me.Panel4.Controls.Add(Me.Panel2)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
@@ -138,28 +139,28 @@ Partial Class FrmBooks
         Me.Panel5.Size = New System.Drawing.Size(10, 46)
         Me.Panel5.TabIndex = 3
         '
-        'Guna2TextBox1
+        'TxtSearch
         '
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(0, 45)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.Guna2TextBox1.PlaceholderText = "Search Books"
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(684, 46)
-        Me.Guna2TextBox1.TabIndex = 2
+        Me.TxtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtSearch.DefaultText = ""
+        Me.TxtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSearch.Dock = System.Windows.Forms.DockStyle.Left
+        Me.TxtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.TxtSearch.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.TxtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.TxtSearch.Location = New System.Drawing.Point(0, 45)
+        Me.TxtSearch.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.TxtSearch.Name = "TxtSearch"
+        Me.TxtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtSearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.TxtSearch.PlaceholderText = "Search Books"
+        Me.TxtSearch.SelectedText = ""
+        Me.TxtSearch.Size = New System.Drawing.Size(684, 46)
+        Me.TxtSearch.TabIndex = 2
         '
         'Panel3
         '
@@ -229,40 +230,40 @@ Partial Class FrmBooks
         Me.UniqueDatagrid.AllowUserToDeleteRows = False
         Me.UniqueDatagrid.AllowUserToResizeColumns = False
         Me.UniqueDatagrid.AllowUserToResizeRows = False
-        DataGridViewCellStyle41.BackColor = System.Drawing.Color.White
-        Me.UniqueDatagrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle41
-        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle42.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle42.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UniqueDatagrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle42
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.UniqueDatagrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UniqueDatagrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.UniqueDatagrid.ColumnHeadersHeight = 25
-        Me.UniqueDatagrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UniqueISBN, Me.UniqueTitle, Me.UniqueAuthor, Me.UniqueDatePublished, Me.UniqueAvailableCopies, Me.UniqueTotalCopies, Me.UniqueBookID})
-        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle43.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle43.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle43.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.UniqueDatagrid.DefaultCellStyle = DataGridViewCellStyle43
+        Me.UniqueDatagrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookID, Me.UniqueISBN, Me.UniqueTitle, Me.UniqueAuthor, Me.UniqueDatePublished, Me.UniqueAvailableCopies, Me.UniqueTotalCopies})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.UniqueDatagrid.DefaultCellStyle = DataGridViewCellStyle3
         Me.UniqueDatagrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UniqueDatagrid.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UniqueDatagrid.Location = New System.Drawing.Point(0, 0)
         Me.UniqueDatagrid.MultiSelect = False
         Me.UniqueDatagrid.Name = "UniqueDatagrid"
         Me.UniqueDatagrid.ReadOnly = True
-        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle44.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UniqueDatagrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle44
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UniqueDatagrid.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.UniqueDatagrid.RowHeadersVisible = False
         Me.UniqueDatagrid.RowHeadersWidth = 51
         Me.UniqueDatagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
@@ -291,6 +292,62 @@ Partial Class FrmBooks
         Me.UniqueDatagrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UniqueDatagrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'BookID
+        '
+        Me.BookID.DataPropertyName = "BookID"
+        Me.BookID.HeaderText = "Book ID"
+        Me.BookID.MinimumWidth = 6
+        Me.BookID.Name = "BookID"
+        Me.BookID.ReadOnly = True
+        '
+        'UniqueISBN
+        '
+        Me.UniqueISBN.DataPropertyName = "ISBN"
+        Me.UniqueISBN.HeaderText = "ISBN"
+        Me.UniqueISBN.MinimumWidth = 6
+        Me.UniqueISBN.Name = "UniqueISBN"
+        Me.UniqueISBN.ReadOnly = True
+        '
+        'UniqueTitle
+        '
+        Me.UniqueTitle.DataPropertyName = "Title"
+        Me.UniqueTitle.HeaderText = "Title"
+        Me.UniqueTitle.MinimumWidth = 6
+        Me.UniqueTitle.Name = "UniqueTitle"
+        Me.UniqueTitle.ReadOnly = True
+        '
+        'UniqueAuthor
+        '
+        Me.UniqueAuthor.DataPropertyName = "Author"
+        Me.UniqueAuthor.HeaderText = "Author"
+        Me.UniqueAuthor.MinimumWidth = 6
+        Me.UniqueAuthor.Name = "UniqueAuthor"
+        Me.UniqueAuthor.ReadOnly = True
+        '
+        'UniqueDatePublished
+        '
+        Me.UniqueDatePublished.DataPropertyName = "DatePublished"
+        Me.UniqueDatePublished.HeaderText = "Date Published"
+        Me.UniqueDatePublished.MinimumWidth = 6
+        Me.UniqueDatePublished.Name = "UniqueDatePublished"
+        Me.UniqueDatePublished.ReadOnly = True
+        '
+        'UniqueAvailableCopies
+        '
+        Me.UniqueAvailableCopies.DataPropertyName = "Available Copies"
+        Me.UniqueAvailableCopies.HeaderText = "Available Copies"
+        Me.UniqueAvailableCopies.MinimumWidth = 6
+        Me.UniqueAvailableCopies.Name = "UniqueAvailableCopies"
+        Me.UniqueAvailableCopies.ReadOnly = True
+        '
+        'UniqueTotalCopies
+        '
+        Me.UniqueTotalCopies.DataPropertyName = "Total Copies"
+        Me.UniqueTotalCopies.HeaderText = "Total Copies"
+        Me.UniqueTotalCopies.MinimumWidth = 6
+        Me.UniqueTotalCopies.Name = "UniqueTotalCopies"
+        Me.UniqueTotalCopies.ReadOnly = True
+        '
         'Copies
         '
         Me.Copies.Controls.Add(Me.Datagridview)
@@ -307,40 +364,40 @@ Partial Class FrmBooks
         Me.Datagridview.AllowUserToDeleteRows = False
         Me.Datagridview.AllowUserToResizeColumns = False
         Me.Datagridview.AllowUserToResizeRows = False
-        DataGridViewCellStyle45.BackColor = System.Drawing.Color.White
-        Me.Datagridview.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle45
-        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle46.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle46.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Datagridview.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle46
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        Me.Datagridview.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Datagridview.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.Datagridview.ColumnHeadersHeight = 25
-        Me.Datagridview.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ISBN, Me.Title, Me.Author, Me.AcquisitionDate, Me.Status, Me.BookID})
-        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle47.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle47.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle47.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Datagridview.DefaultCellStyle = DataGridViewCellStyle47
+        Me.Datagridview.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ISBN, Me.Title, Me.Author, Me.DatePublished, Me.Status, Me.AcquisitionDate, Me.InstanceID})
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Datagridview.DefaultCellStyle = DataGridViewCellStyle7
         Me.Datagridview.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Datagridview.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Datagridview.Location = New System.Drawing.Point(0, 0)
         Me.Datagridview.MultiSelect = False
         Me.Datagridview.Name = "Datagridview"
         Me.Datagridview.ReadOnly = True
-        DataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle48.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle48.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
-        DataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Datagridview.RowHeadersDefaultCellStyle = DataGridViewCellStyle48
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Datagridview.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.Datagridview.RowHeadersVisible = False
         Me.Datagridview.RowHeadersWidth = 51
         Me.Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
@@ -393,13 +450,13 @@ Partial Class FrmBooks
         Me.Author.Name = "Author"
         Me.Author.ReadOnly = True
         '
-        'AcquisitionDate
+        'DatePublished
         '
-        Me.AcquisitionDate.DataPropertyName = "AcquisitionDate"
-        Me.AcquisitionDate.HeaderText = "Date Added"
-        Me.AcquisitionDate.MinimumWidth = 6
-        Me.AcquisitionDate.Name = "AcquisitionDate"
-        Me.AcquisitionDate.ReadOnly = True
+        Me.DatePublished.DataPropertyName = "DatePublished"
+        Me.DatePublished.HeaderText = "Date Published"
+        Me.DatePublished.MinimumWidth = 6
+        Me.DatePublished.Name = "DatePublished"
+        Me.DatePublished.ReadOnly = True
         '
         'Status
         '
@@ -409,71 +466,21 @@ Partial Class FrmBooks
         Me.Status.Name = "Status"
         Me.Status.ReadOnly = True
         '
-        'BookID
+        'AcquisitionDate
         '
-        Me.BookID.DataPropertyName = "BookID"
-        Me.BookID.HeaderText = "Book ID"
-        Me.BookID.MinimumWidth = 6
-        Me.BookID.Name = "BookID"
-        Me.BookID.ReadOnly = True
-        Me.BookID.Visible = False
+        Me.AcquisitionDate.DataPropertyName = "AcquisitionDate"
+        Me.AcquisitionDate.HeaderText = "Date Added"
+        Me.AcquisitionDate.MinimumWidth = 6
+        Me.AcquisitionDate.Name = "AcquisitionDate"
+        Me.AcquisitionDate.ReadOnly = True
         '
-        'UniqueISBN
+        'InstanceID
         '
-        Me.UniqueISBN.DataPropertyName = "ISBN"
-        Me.UniqueISBN.HeaderText = "ISBN"
-        Me.UniqueISBN.MinimumWidth = 6
-        Me.UniqueISBN.Name = "UniqueISBN"
-        Me.UniqueISBN.ReadOnly = True
-        '
-        'UniqueTitle
-        '
-        Me.UniqueTitle.DataPropertyName = "Title"
-        Me.UniqueTitle.HeaderText = "Title"
-        Me.UniqueTitle.MinimumWidth = 6
-        Me.UniqueTitle.Name = "UniqueTitle"
-        Me.UniqueTitle.ReadOnly = True
-        '
-        'UniqueAuthor
-        '
-        Me.UniqueAuthor.DataPropertyName = "Author"
-        Me.UniqueAuthor.HeaderText = "Author"
-        Me.UniqueAuthor.MinimumWidth = 6
-        Me.UniqueAuthor.Name = "UniqueAuthor"
-        Me.UniqueAuthor.ReadOnly = True
-        '
-        'UniqueDatePublished
-        '
-        Me.UniqueDatePublished.DataPropertyName = "DatePublished"
-        Me.UniqueDatePublished.HeaderText = "Date Published"
-        Me.UniqueDatePublished.MinimumWidth = 6
-        Me.UniqueDatePublished.Name = "UniqueDatePublished"
-        Me.UniqueDatePublished.ReadOnly = True
-        '
-        'UniqueAvailableCopies
-        '
-        Me.UniqueAvailableCopies.DataPropertyName = "Available Copies"
-        Me.UniqueAvailableCopies.HeaderText = "Available Copies"
-        Me.UniqueAvailableCopies.MinimumWidth = 6
-        Me.UniqueAvailableCopies.Name = "UniqueAvailableCopies"
-        Me.UniqueAvailableCopies.ReadOnly = True
-        '
-        'UniqueTotalCopies
-        '
-        Me.UniqueTotalCopies.DataPropertyName = "Total Copies"
-        Me.UniqueTotalCopies.HeaderText = "Total Copies"
-        Me.UniqueTotalCopies.MinimumWidth = 6
-        Me.UniqueTotalCopies.Name = "UniqueTotalCopies"
-        Me.UniqueTotalCopies.ReadOnly = True
-        '
-        'UniqueBookID
-        '
-        Me.UniqueBookID.DataPropertyName = "BookID"
-        Me.UniqueBookID.HeaderText = "Book ID"
-        Me.UniqueBookID.MinimumWidth = 6
-        Me.UniqueBookID.Name = "UniqueBookID"
-        Me.UniqueBookID.ReadOnly = True
-        Me.UniqueBookID.Visible = False
+        Me.InstanceID.DataPropertyName = "InstanceID"
+        Me.InstanceID.HeaderText = "Instance ID"
+        Me.InstanceID.MinimumWidth = 6
+        Me.InstanceID.Name = "InstanceID"
+        Me.InstanceID.ReadOnly = True
         '
         'FrmBooks
         '
@@ -507,7 +514,7 @@ Partial Class FrmBooks
     Friend WithEvents Panel4 As Panel
     Friend WithEvents BtnNewBorrower As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TxtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel10 As Panel
@@ -518,11 +525,6 @@ Partial Class FrmBooks
     Friend WithEvents Copies As TabPage
     Friend WithEvents UniqueDatagrid As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Datagridview As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents ISBN As DataGridViewTextBoxColumn
-    Friend WithEvents Title As DataGridViewTextBoxColumn
-    Friend WithEvents Author As DataGridViewTextBoxColumn
-    Friend WithEvents AcquisitionDate As DataGridViewTextBoxColumn
-    Friend WithEvents Status As DataGridViewTextBoxColumn
     Friend WithEvents BookID As DataGridViewTextBoxColumn
     Friend WithEvents UniqueISBN As DataGridViewTextBoxColumn
     Friend WithEvents UniqueTitle As DataGridViewTextBoxColumn
@@ -530,5 +532,11 @@ Partial Class FrmBooks
     Friend WithEvents UniqueDatePublished As DataGridViewTextBoxColumn
     Friend WithEvents UniqueAvailableCopies As DataGridViewTextBoxColumn
     Friend WithEvents UniqueTotalCopies As DataGridViewTextBoxColumn
-    Friend WithEvents UniqueBookID As DataGridViewTextBoxColumn
+    Friend WithEvents ISBN As DataGridViewTextBoxColumn
+    Friend WithEvents Title As DataGridViewTextBoxColumn
+    Friend WithEvents Author As DataGridViewTextBoxColumn
+    Friend WithEvents DatePublished As DataGridViewTextBoxColumn
+    Friend WithEvents Status As DataGridViewTextBoxColumn
+    Friend WithEvents AcquisitionDate As DataGridViewTextBoxColumn
+    Friend WithEvents InstanceID As DataGridViewTextBoxColumn
 End Class
