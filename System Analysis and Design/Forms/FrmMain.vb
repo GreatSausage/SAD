@@ -1,4 +1,5 @@
-﻿Public Class FrmMain
+﻿
+Public Class FrmMain
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BilognaPictureBox(PictureBox1)
         DisplayFormPanel(FrmDashboard, PanelDisplay)
@@ -23,5 +24,10 @@
 
     Private Sub BtnBooks_Click(sender As Object, e As EventArgs) Handles BtnBooks.Click
         DisplayFormPanel(FrmBooks, PanelDisplay)
+    End Sub
+
+    Private Sub BtnBorrow_Click(sender As Object, e As EventArgs) Handles BtnBorrow.Click
+        Dim s As New FrmBorrow
+        s.Show()
     End Sub
 End Class

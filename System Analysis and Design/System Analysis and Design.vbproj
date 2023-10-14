@@ -94,6 +94,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FrmBorrowerList.Designer.vb">
+      <DependentUpon>FrmBorrowerList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBorrowerList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmBookInfo.Designer.vb">
       <DependentUpon>FrmBookInfo.vb</DependentUpon>
     </Compile>
@@ -104,6 +110,12 @@
       <DependentUpon>FrmBooks.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmBooks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBorrow.Designer.vb">
+      <DependentUpon>FrmBorrow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBorrow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmBorrowerInfo.Designer.vb">
@@ -174,11 +186,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmBorrowerList.resx">
+      <DependentUpon>FrmBorrowerList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmBookInfo.resx">
       <DependentUpon>FrmBookInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmBooks.resx">
       <DependentUpon>FrmBooks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBorrow.resx">
+      <DependentUpon>FrmBorrow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmBorrowerInfo.resx">
       <DependentUpon>FrmBorrowerInfo.vb</DependentUpon>

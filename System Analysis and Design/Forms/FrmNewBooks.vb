@@ -14,12 +14,12 @@ Public Class FrmNewBooks
     End Sub
 
     Private Sub InputLimits(sender As Object, e As KeyPressEventArgs) Handles TxtISBN.KeyPress
-        If e.KeyChar = Chr(8) Then
-            Exit Sub
-        End If
-        If TxtISBN.Text.Length >= 12 Then
-            e.Handled = True
-        End If
+        'If e.KeyChar = Chr(8) Then
+        '    Exit Sub
+        'End If
+        'If TxtISBN.Text.Length >= 13 Then
+        '    e.Handled = True
+        'End If
     End Sub
 
     Private Sub BtnCancel_Click_1(sender As Object, e As EventArgs) Handles BtnCancel.Click
@@ -27,8 +27,8 @@ Public Class FrmNewBooks
     End Sub
 
     Private Sub BtnAdd_Click_1(sender As Object, e As EventArgs) Handles BtnAdd.Click
-        If TxtISBN.Text.Length = 12 Then
-            If String.IsNullOrEmpty(TxtAuthor.Text) Then
+        'If TxtISBN.Text.Length = 12 Then
+        If String.IsNullOrEmpty(TxtAuthor.Text) Then
                 EmptyTextbox()
                 Exit Sub
             ElseIf String.IsNullOrEmpty(TxtDatePublished.text) Then
@@ -48,8 +48,8 @@ Public Class FrmNewBooks
                 LoadUniqueBooks()
                 LoadBookCopies()
             End If
-        Else
-            MessageBox.Show("Invalid ISBN")
-        End If
+        'Else
+        '    MessageBox.Show("Invalid ISBN")
+        'End If
     End Sub
 End Class

@@ -2,8 +2,8 @@
     Private Sub FrmBooks_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadUniqueBooks()
         LoadBookCopies()
-        Datagridview.Columns("InstanceID").Visible = False
-        UniqueDatagrid.Columns("BookID").Visible = False
+        Datagridview.Columns("InstanceID").Visible = True
+        UniqueDatagrid.Columns("BookID").Visible = True
     End Sub
 
     Private Sub BtnNewBorrower_Click(sender As Object, e As EventArgs) Handles BtnNewBorrower.Click

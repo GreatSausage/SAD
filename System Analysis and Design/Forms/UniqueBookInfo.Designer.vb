@@ -24,9 +24,9 @@ Partial Class UniqueBookInfo
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel36 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.TxtBookID = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtAddCopies = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.BtnUpdate = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtTotalCopies = New Guna.UI2.WinForms.Guna2TextBox()
@@ -38,6 +38,7 @@ Partial Class UniqueBookInfo
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel36 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.TxtAddCopies, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,7 +52,7 @@ Partial Class UniqueBookInfo
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(790, 10)
+        Me.Panel1.Size = New System.Drawing.Size(800, 10)
         Me.Panel1.TabIndex = 22
         '
         'Panel2
@@ -60,20 +61,13 @@ Partial Class UniqueBookInfo
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(790, 10)
+        Me.Panel2.Size = New System.Drawing.Size(800, 10)
         Me.Panel2.TabIndex = 1
-        '
-        'Panel36
-        '
-        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel36.Location = New System.Drawing.Point(790, 0)
-        Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(10, 569)
-        Me.Panel36.TabIndex = 24
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.TxtBookID)
+        Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.TxtAddCopies)
         Me.Panel3.Controls.Add(Me.BtnUpdate)
         Me.Panel3.Controls.Add(Me.TxtTotalCopies)
@@ -87,18 +81,27 @@ Partial Class UniqueBookInfo
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 10)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(401, 559)
+        Me.Panel3.Size = New System.Drawing.Size(401, 582)
         Me.Panel3.TabIndex = 25
         '
         'TxtBookID
         '
         Me.TxtBookID.AutoSize = True
-        Me.TxtBookID.Location = New System.Drawing.Point(12, 441)
+        Me.TxtBookID.Location = New System.Drawing.Point(137, 389)
         Me.TxtBookID.Name = "TxtBookID"
         Me.TxtBookID.Size = New System.Drawing.Size(52, 16)
         Me.TxtBookID.TabIndex = 26
         Me.TxtBookID.Text = "BookID"
         Me.TxtBookID.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(2, 389)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(393, 20)
+        Me.Label2.TabIndex = 27
+        Me.Label2.Text = "Add Copies?"
         '
         'TxtAddCopies
         '
@@ -106,7 +109,7 @@ Partial Class UniqueBookInfo
         Me.TxtAddCopies.BorderColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.TxtAddCopies.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TxtAddCopies.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtAddCopies.Location = New System.Drawing.Point(6, 393)
+        Me.TxtAddCopies.Location = New System.Drawing.Point(6, 413)
         Me.TxtAddCopies.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtAddCopies.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.TxtAddCopies.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
@@ -126,7 +129,7 @@ Partial Class UniqueBookInfo
         Me.BtnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(211, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnUpdate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnUpdate.ForeColor = System.Drawing.Color.White
-        Me.BtnUpdate.Location = New System.Drawing.Point(6, 466)
+        Me.BtnUpdate.Location = New System.Drawing.Point(6, 491)
         Me.BtnUpdate.Name = "BtnUpdate"
         Me.BtnUpdate.Size = New System.Drawing.Size(389, 40)
         Me.BtnUpdate.TabIndex = 34
@@ -285,7 +288,7 @@ Partial Class UniqueBookInfo
         Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(62, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(6, 512)
+        Me.Guna2Button1.Location = New System.Drawing.Point(6, 537)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.Size = New System.Drawing.Size(389, 40)
         Me.Guna2Button1.TabIndex = 25
@@ -311,15 +314,23 @@ Partial Class UniqueBookInfo
         Me.Label1.Text = "Book Information"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Panel36
+        '
+        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel36.Location = New System.Drawing.Point(790, 10)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(10, 582)
+        Me.Panel36.TabIndex = 26
+        '
         'UniqueBookInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 569)
+        Me.ClientSize = New System.Drawing.Size(800, 592)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel36)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Panel36)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "UniqueBookInfo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -334,7 +345,6 @@ Partial Class UniqueBookInfo
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel36 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents BtnUpdate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents TxtTotalCopies As Guna.UI2.WinForms.Guna2TextBox
@@ -348,4 +358,6 @@ Partial Class UniqueBookInfo
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtAddCopies As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents TxtBookID As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel36 As Panel
 End Class

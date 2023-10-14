@@ -85,7 +85,6 @@ Partial Class FrmBookInfo
         Me.TxtInstanceID.Size = New System.Drawing.Size(48, 16)
         Me.TxtInstanceID.TabIndex = 22
         Me.TxtInstanceID.Text = "Label2"
-        Me.TxtInstanceID.Visible = False
         '
         'TxtDateAdded
         '

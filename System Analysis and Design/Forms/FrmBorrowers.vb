@@ -18,7 +18,7 @@
             Dim grade As Integer = selectedRow.Cells("Grade").Value.ToString
             Dim section As String = selectedRow.Cells("Section").Value.ToString
             Dim contact As String = selectedRow.Cells("GuardianContact").Value.ToString
-            Dim borrowerInfo As New FrmBorrowerInfo(BorrowerID, lrn, firstname, lastname, grade, section, contact)
+            Dim borrowerInfo As New FrmBorrowerInfo(borrowerID, lrn, firstname, lastname, grade, section, contact)
             borrowerInfo.Show()
         End If
     End Sub
@@ -26,4 +26,5 @@
     Private Sub TxtSearch_TextChanged(sender As Object, e As EventArgs) Handles TxtSearch.TextChanged
         SearchBorrowers(Datagridview, TxtSearch.Text)
     End Sub
+
 End Class

@@ -1,10 +1,11 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Collections.ObjectModel
+Imports System.Data.SqlClient
 
 Module MdlDatabase
 
     Private Const ConnStringBooks As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Clifford\source\repos\System Analysis and Design\System Analysis and Design\dbBooks.mdf;Integrated Security=True"
 
-    Private Function CreateConnectionBooks() As SqlConnection
+    Public Function CreateConnectionBooks() As SqlConnection
         Return New SqlConnection(ConnStringBooks)
     End Function
 
@@ -60,9 +61,20 @@ Module MdlDatabase
         End Using
     End Function
 
+    Public Function DisplayBorrowable(tblName As String) As DataTable
+        Using conn As SqlConnection = CreateConnectionBooks()
+            Dim selectCommand As New SqlCommand($"SELECT * FROM {tblName}", conn)
+            Dim adapter As New SqlDataAdapter(selectCommand)
+            Dim dataset As New DataSet()
+            conn.Open()
+            adapter.Fill(dataset)
+            Return dataset.Tables(0)
+        End Using
+    End Function
     Public Sub InsertBorrowers()
         Using conn As SqlConnection = CreateConnectionBooks()
-            Dim insertCommand As New SqlCommand("INSERT INTO tblBorrowers (lrn, firstName, lastName, grade, section, guardianContact) VALUES (@lrn, @firstName, @lastName, @grade, @section, @guardianContact)", conn)
+            Dim insertCommand As New SqlCommand("INSERT INTO tblBorrowers (lrn, firstName, lastName, grade, section, guardianContact) 
+                                                 VALUES (@lrn, @firstName, @lastName, @grade, @section, @guardianContact)", conn)
             With insertCommand.Parameters
                 .AddWithValue("@lrn", FrmNewBorrower.TxtLRN.Text)
                 .AddWithValue("@firstName", FrmNewBorrower.TxtFirstName.Text)
@@ -78,6 +90,24 @@ Module MdlDatabase
             FrmNewBorrower.Close()
             Dim table As DataTable = DisplayData("tblBorrowers")
             FrmBorrowers.Datagridview.DataSource = table
+        End Using
+    End Sub
+
+    Public Sub InsertFaculty()
+        Using conn As SqlConnection = CreateConnectionBooks()
+            Dim insertCommand As New SqlCommand("INSERT INTO tblFaculty (Firstname, Lastname, Contact) 
+                                                 VALUES (@firstname, @lastname, @contact)", conn)
+            With insertCommand.Parameters
+                .AddWithValue("@firstname", FrmNewBorrower.TxtFirstName.Text)
+                .AddWithValue("@lastname", FrmNewBorrower.TxtLastName.Text)
+                .AddWithValue("@contact", FrmNewBorrower.TxtContact.Text)
+            End With
+            conn.Open()
+            insertCommand.ExecuteNonQuery()
+            MessageBox.Show("Added Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            FrmNewBorrower.Close()
+            Dim table As DataTable = DisplayData("tblFaculty")
+            FrmBorrowers.FacultyDatagridview.DataSource = table
         End Using
     End Sub
 
@@ -241,4 +271,6 @@ Module MdlDatabase
 
 #End Region
 
+#Region "return functions"
+#End Region
 End Module
